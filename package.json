@@ -1,0 +1,14 @@
+{
+  "name": "importaciones-xpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://github.com/FacuCra001/Importaciones-Xpress#readme",
+  "scripts": {
+    "dev": "sass --watch scss/main.scss styles/styles.css",
+    "build": "sass --style=compressed scss/main.scss styles/styles.css"
+  },
+  "devDependencies": {
+    "sass": "^1.90.0"
+  }
+}

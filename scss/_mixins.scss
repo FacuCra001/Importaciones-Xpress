@@ -1,0 +1,44 @@
+@use "sass:meta";
+@use "sass:map";
+@use "variables" as v;
+
+@mixin mq($key) {
+    @if meta.type-of($key) == "string" {
+    @media (min-width: map.get(v.$bp, $key)) { @content; }
+    } @else {
+    @media (max-width: $key) { @content; }
+    }
+}
+
+@mixin btn($bg, $fg: v.$color-white) {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .62rem 1rem;
+    border: 0;
+    border-radius: v.$radius;
+    background: $bg;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+    &:hover { transform: translateY(-1px); }
+    &:active { transform: translateY(0); }
+}
+
+@mixin card {
+    background: v.$color-white;
+    border-radius: v.$radius;
+    box-shadow: v.$shadow;
+}
+
+@mixin auto-grid($min: 220px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
+    gap: 1.25rem;
+}
+
+@mixin container {
+    width: min(1200px, 92vw);
+    margin-inline: auto;
+    padding-inline: clamp(12px, 3vw, 24px);
+}

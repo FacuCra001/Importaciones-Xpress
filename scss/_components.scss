@@ -1,0 +1,87 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.publicidad {
+    background: #fafbfc;
+    border: 1px dashed v.$color-border;
+    @include m.container;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    text-align: center;
+    .img-publicidad { border-radius: v.$radius; margin-inline: auto; width: 100%; height: auto; }
+}
+
+.productos-destacados {
+    @include m.container;
+    margin-top: .5rem;
+    h2 { text-align: center; font-size: clamp(1.2rem, 1.6vw, 1.6rem); margin: 1rem 0 1.25rem; }
+    .grid-productos { @include m.auto-grid(240px); }     .producto-card {
+    perspective: 1000px;
+    .producto-inner {
+        position: relative;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform .6s;
+    }
+    &:hover .producto-inner { transform: rotateY(180deg); }
+    .producto-front, .producto-back {
+        @include m.card;
+        padding: 1rem;
+        min-height: 320px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        backface-visibility: hidden;
+    }
+    .producto-front {
+        img { width: 100%; border-radius: 10px; object-fit: cover; }
+        h3 { margin: .5rem 0 .15rem; font-size: 1.05rem; }
+        .precio { color: v.$color-primary; font-weight: 800; }
+    }
+    .producto-back {
+        position: absolute;
+        inset: 0;
+        transform: rotateY(180deg);
+        p { color: v.$color-muted; line-height: 1.6; }
+        button { @include m.btn(v.$color-primary); }
+    }
+    }
+}
+
+.contacto-container { @include m.container; display: grid; gap: 2rem; margin-top: 1.25rem; }
+.formulario-contacto form { display: grid; gap: 1rem; }
+.campo { display: grid; gap: .4rem; }
+.campo input, .campo textarea { border: 1px solid v.$color-border; border-radius: v.$radius; padding: .7rem .9rem; }
+
+.productos-destacados .grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+@include m.mq(450px) {
+    .producto-card .producto-front,
+    .producto-card .producto-back {
+    min-height: 280px;
+    padding: .75rem;
+    }
+}
+
+.btn-buscar {
+    position: relative;
+    padding-left: 2.25rem;
+}
+.btn-buscar::before {
+    content: "";
+    position: absolute;
+    left: .75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: url("../assets/lupa.png") no-repeat center / contain;
+    filter: invert(1);
+}
+.productos-destacados .grid-productos { min-width: 0; }
+.producto-card { contain: layout paint; }
