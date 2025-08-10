@@ -301,3 +301,409 @@ sucursales {
     border-radius: 10px;
     max-width: 300px;
 }
+.logo {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+
+nav ul li a {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+    background-color: #dcdcdc;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container img {
+    height: 50px;
+    transition: transform 0.3s;
+}
+
+.logo-container h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo-container h1 span {
+    color: #ff6600;
+}
+
+.logo-container:hover img,
+.logo-container:hover h1 {
+    transform: scale(1.1);
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-container img {
+    height: 50px;
+}
+.logo-container h1 span {
+    color: #ff6600;
+    text-decoration: none;
+}
+.nav-principal ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.nav-principal li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    color: #2e2eff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.nav-principal li a:hover {
+    transform: scale(1.1);
+    background-color: #e0e0e0;
+}
+form-busqueda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-busqueda input[type="search"] {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 180px;
+}
+
+.btn-buscar {
+    padding: 8px 12px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-buscar:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-oferta {
+    padding: 8px 12px;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-oferta:hover {
+    background-color: #e6c200;
+    transform: scale(1.05);
+}
+.grid-productos {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.producto-flip {
+    background: transparent;
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.producto-flip:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 1rem;
+    background: #fff;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.flip-card-front h3,
+.flip-card-back h3 {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.flip-card-front p {
+    font-weight: bold;
+    color: #333;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-back p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.flip-card-back button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.flip-card-back button:hover {
+    background-color: #0056b3;
+}
+.productos-destacados {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f5f5f5;
+}
+
+.grid-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.producto-card {
+    perspective: 1000px;
+    width: 250px;
+    height: 350px;
+}
+
+.producto-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.producto-card:hover .producto-inner {
+    transform: rotateY(180deg);
+}
+
+.producto-front, .producto-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.producto-front img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.producto-front h3 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.producto-front .precio {
+    color: #007bff;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.producto-back {
+    transform: rotateY(180deg);
+    text-align: center;
+    gap: 1rem;
+}
+
+.producto-back p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.producto-back button {
+    padding: 8px 16px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.producto-back button:hover {
+    background-color: #004a99;
+}
+.productos {
+    padding: 2rem;
+    background-color: #f5f5f5;
+}
+
+.productos h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.categoria-productos {
+    margin-bottom: 3rem;
+}
+
+.categoria-productos h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+
+.grid-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+
+.card-producto {
+    width: 220px;
+    height: 320px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card-producto:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+
+.card-front img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.card-front h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: #222;
+}
+
+.card-front p {
+    font-weight: bold;
+    color: #0066cc;
+}
+
+
+.card-back {
+    transform: rotateY(180deg);
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.card-back p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
+    padding: 1rem 0.5rem;
+}
