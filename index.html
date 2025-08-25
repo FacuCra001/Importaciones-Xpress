@@ -31,49 +31,49 @@
     </header>
 
     <main class="contenido-tienda">
-    <section class="publicidad" aria-label="Publicidad - Perfumes nuevos">
+<section class="publicidad">
+    <h2 class="titulo-publicidad">Promo:</h2>
+    <div class="carrusel-wrapper">
     <button class="flecha izquierda" aria-label="Anterior">‹</button>
-        <h2 class="titulo-publicidad">Promociones:</h2>
-    <div class="carrusel-container">
-        <div class="carrusel">
-            <div class="tarjeta-publicidad">
-                <img src="./assets/perfume1.jpg" alt="Perfume A" />
-                <h3>Aqua Di Gio</h3>
-                <p class="precio">$150.000</p>
-                <p class="descuento">Descuento 20%</p>
-                <a href="./pages/perfume1.html" class="btn-info">Info</a>
-            </div>
-            <div class="tarjeta-publicidad">
-                <img src="./assets/perfume2.jpg" alt="Perfume B" />
-                <h3>YSLV</h3>
-                <p class="precio">$190.500</p>
-                <p class="descuento">Promoción 2x1</p>
-                <a href="./pages/perfume2.html" class="btn-info">Info</a>
-            </div>
-            <div class="tarjeta-publicidad">
-                <img src="./assets/perfume3.jpg" alt="Perfume C" />
-                <h3>Channel</h3>
-                <p class="precio">$106.200</p>
-                <p class="descuento">Hasta 30% off</p>
-                <a href="./pages/perfume3.html" class="btn-info">Info</a>
-            </div>
-            <div class="tarjeta-publicidad">
-                <img src="./assets/perfume4.jpg" alt="Perfume D" />
-                <h3>My Way</h3>
-                <p class="precio">$155.800</p>
-                <p class="descuento">Oferta especial</p>
-                <a href="./pages/perfume4.html" class="btn-info">Info</a>
-            </div>
-            <div class="tarjeta-publicidad">
-                <img src="./assets/perfume5.jpg" alt="Perfume E" />
-                <h3>Invictus</h3>
-                <p class="precio">$200.000</p>
-                <p class="descuento">Descuento 10%</p>
-                <a href="./pages/perfume5.html" class="btn-info">Info</a>
-            </div>
+    <div class="carrusel">
+        <div class="tarjeta-publicidad">
+        <img src="./assets/perfume1.jpg" alt="Aqua Di Gio">
+        <h3>Aqua Di Gio</h3>
+        <p class="precio">$150.000</p>
+        <p class="descuento">Descuento 20%</p>
+        <a href="./pages/perfume1.html" class="btn-info">Info</a>
+        </div>
+        <div class="tarjeta-publicidad">
+        <img src="./assets/perfume2.jpg" alt="YSLV">
+        <h3>YSLV</h3>
+        <p class="precio">$190.500</p>
+        <p class="descuento">Promoción 2x1</p>
+        <a href="./pages/perfume2.html" class="btn-info">Info</a>
+        </div>
+        <div class="tarjeta-publicidad">
+        <img src="./assets/perfume3.jpg" alt="Channel">
+        <h3>Channel</h3>
+        <p class="precio">$106.200</p>
+        <p class="descuento">Hasta 30% off</p>
+        <a href="./pages/perfume3.html" class="btn-info">Info</a>
+        </div>
+        <div class="tarjeta-publicidad">
+        <img src="./assets/perfume4.jpg" alt="My Way">
+        <h3>My Way</h3>
+        <p class="precio">$155.800</p>
+        <p class="descuento">Oferta especial</p>
+        <a href="./pages/perfume4.html" class="btn-info">Info</a>
+        </div>
+        <div class="tarjeta-publicidad">
+        <img src="./assets/perfume5.jpg" alt="Invictus">
+        <h3>Invictus</h3>
+        <p class="precio">$200.000</p>
+        <p class="descuento">Oferta especial</p>
+        <a href="./pages/perfume5.html" class="btn-info">Info</a>
         </div>
     </div>
     <button class="flecha derecha" aria-label="Siguiente">›</button>
+    </div>
 </section>
 
         <section class="productos" aria-label="Productos destacados"></section>
@@ -94,38 +94,34 @@
         </div>
     </footer>
 
-    <script>
-    const carrusel = document.querySelector('.carrusel');
-    const tarjetas = document.querySelectorAll('.tarjeta-publicidad');
-    const izquierda = document.querySelector('.flecha.izquierda');
-    const derecha = document.querySelector('.flecha.derecha');
+<script>
+const carrusel = document.querySelector('.carrusel');
+const izquierda = document.querySelector('.flecha.izquierda');
+const derecha = document.querySelector('.flecha.derecha');
 
-    let posicion = 0;
-    const paso = tarjetas[0].offsetWidth + 16;
+function pasoActual() {
+    const card = carrusel.querySelector('.tarjeta-publicidad');
+    const styles = window.getComputedStyle(carrusel);
+    const gap = parseInt(styles.gap) || 0;
+    return Math.round(card.getBoundingClientRect().width) + gap;
+}
 
-    derecha.addEventListener('click', () => {
-        posicion -= paso;
-        if (Math.abs(posicion) > (carrusel.scrollWidth - carrusel.offsetWidth)) {
-            posicion = 0;
-        }
-        carrusel.style.transform = `translateX(${posicion}px)`;
-    });
+let posicion = 0;
 
-    izquierda.addEventListener('click', () => {
-        posicion += paso;
-        if (posicion > 0) {
-            posicion = -(carrusel.scrollWidth - carrusel.offsetWidth);
-        }
-        carrusel.style.transform = `translateX(${posicion}px)`;
-    });
+function maximoDesplazamiento() {
+    return carrusel.scrollWidth - carrusel.clientWidth;
+}
 
-    setInterval(() => {
-        posicion -= paso;
-        if (Math.abs(posicion) > (carrusel.scrollWidth - carrusel.offsetWidth)) {
-            posicion = 0;
-        }
-        carrusel.style.transform = `translateX(${posicion}px)`;
-    }, 3500);
-    </script>
+function mover(dir) {
+  posicion += dir * pasoActual();
+    if (posicion < 0) posicion = 0;
+    if (posicion > maximoDesplazamiento()) posicion = maximoDesplazamiento();
+    carrusel.style.transform = `translateX(${-posicion}px)`;
+}
+
+derecha.addEventListener('click', () => mover(1));
+izquierda.addEventListener('click', () => mover(-1));
+window.addEventListener('resize', () => { posicion = Math.min(posicion, maximoDesplazamiento()); carrusel.style.transform = `translateX(${-posicion}px)`; });
+</script>
 </body>
 </html>
