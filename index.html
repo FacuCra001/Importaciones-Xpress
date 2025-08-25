@@ -9,48 +9,116 @@
 </head>
 <body>
     <header class="encabezado">
-    <div class="logo-busqueda">
-        <a href="./index.html" class="logo-container" aria-label="Ir al inicio">
-        <img src="./assets/Captura de pantalla 2025-06-26 195851.png" alt="Logo Importaciones Xpress" class="logo" />
-        <h1>Importaciones <span class="resaltado">Xpress</span></h1>
-        </a>
-        <form class="form-busqueda" action="#" role="search">
-        <input type="search" placeholder="Buscar..." aria-label="Buscar productos" />
-        <button type="submit" class="btn-buscar">Buscar</button>
-        <button type="button" class="btn-oferta">Oferta</button>
-        </form>
-    </div>
-    <nav class="nav-principal" aria-label="Navegación principal">
-        <ul>
-        <li><a href="./pages/sucursales.html">Sucursales</a></li>
-        <li><a href="./pages/tienda.html">Tienda</a></li>
-        <li><a href="./pages/sobrenosotros.html">Sobre Nosotros</a></li>
-        <li><a href="./pages/contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
+        <div class="logo-busqueda">
+            <a href="./index.html" class="logo-container" aria-label="Ir al inicio">
+                <img src="./assets/Captura de pantalla 2025-06-26 195851.png" alt="Logo Importaciones Xpress" class="logo" />
+                <h1>Importaciones <span class="resaltado">Xpress</span></h1>
+            </a>
+            <form class="form-busqueda" action="#" role="search">
+                <input type="search" placeholder="Buscar..." aria-label="Buscar productos" />
+                <button type="submit" class="btn-buscar">Buscar</button>
+                <button type="button" class="btn-oferta">Oferta</button>
+            </form>
+        </div>
+        <nav class="nav-principal" aria-label="Navegación principal">
+            <ul>
+                <li><a href="./pages/sucursales.html">Sucursales</a></li>
+                <li><a href="./pages/tienda.html">Tienda</a></li>
+                <li><a href="./pages/sobrenosotros.html">Sobre Nosotros</a></li>
+                <li><a href="./pages/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="contenido-tienda">
-    <section class="publicidad" aria-label="Publicidad">
-        <p>Foto Publicidad</p>
-    </section>
-    <section class="productos" aria-label="Productos destacados"></section>
+<section class="publicidad" aria-label="Publicidad - Perfumes nuevos">
+    <h2 class="titulo-publicidad">Promociones:</h2>
+    <button class="flecha izquierda" aria-label="Anterior">‹</button>
+    <div class="carrusel-container">
+        <div class="carrusel">
+            <div class="tarjeta-publicidad">
+                <img src="./assets/perfume1.jpg" alt="Perfume A" />
+                <h3>Aqua Di Gio</h3>
+                <p class="precio">$150.000</p>
+                <p class="descuento">Descuento 20%</p>
+                <a href="./pages/perfume1.html" class="btn-info">Info</a>
+            </div>
+            <div class="tarjeta-publicidad">
+                <img src="./assets/perfume2.jpg" alt="Perfume B" />
+                <h3>YSLV</h3>
+                <p class="precio">$190.500</p>
+                <p class="descuento">Promoción 2x1</p>
+                <a href="./pages/perfume2.html" class="btn-info">Info</a>
+            </div>
+            <div class="tarjeta-publicidad">
+                <img src="./assets/perfume3.jpg" alt="Perfume C" />
+                <h3>Channel</h3>
+                <p class="precio">$106.200</p>
+                <p class="descuento">Hasta 30% off</p>
+                <a href="./pages/perfume3.html" class="btn-info">Info</a>
+            </div>
+            <div class="tarjeta-publicidad">
+                <img src="./assets/perfume4.jpg" alt="Perfume D" />
+                <h3>My Way</h3>
+                <p class="precio">$155.800</p>
+                <p class="descuento">Oferta especial</p>
+                <a href="./pages/perfume4.html" class="btn-info">Info</a>
+            </div>
+        </div>
+    </div>
+    <button class="flecha derecha" aria-label="Siguiente">›</button>
+</section>
+
+        <section class="productos" aria-label="Productos destacados"></section>
     </main>
 
     <footer class="footer">
-    <p class="derechos">© Importaciones Xpress - Todos los derechos reservados</p>
-
-    <div class="redes-sociales" aria-label="Redes sociales">
-        <a href="https://www.instagram.com/importados.xpress/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Importaciones Xpress">
-        <img src="./assets/instagram.jpeg" alt="Instagram" title="Instagram" />
-        </a>
-        <a href="https://www.facebook.com/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <img src="./assets/facebookimg.png" alt="Facebook" />
-        </a>
-        <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Web">
-        <img src="./assets/whatsappimg.jpeg" alt="Whatsapp" />
-        </a>
-    </div>
+        <p class="derechos">© Importaciones Xpress - Todos los derechos reservados</p>
+        <div class="redes-sociales" aria-label="Redes sociales">
+            <a href="https://www.instagram.com/importados.xpress/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Importaciones Xpress">
+                <img src="./assets/instagram.jpeg" alt="Instagram" title="Instagram" />
+            </a>
+            <a href="https://www.facebook.com/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <img src="./assets/facebookimg.png" alt="Facebook" />
+            </a>
+            <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Web">
+                <img src="./assets/whatsappimg.jpeg" alt="Whatsapp" />
+            </a>
+        </div>
     </footer>
+
+    <script>
+    const carrusel = document.querySelector('.carrusel');
+    const tarjetas = document.querySelectorAll('.tarjeta-publicidad');
+    const izquierda = document.querySelector('.flecha.izquierda');
+    const derecha = document.querySelector('.flecha.derecha');
+
+    let posicion = 0;
+    const paso = tarjetas[0].offsetWidth + 16;
+
+    derecha.addEventListener('click', () => {
+        posicion -= paso;
+        if (Math.abs(posicion) > (carrusel.scrollWidth - carrusel.offsetWidth)) {
+            posicion = 0;
+        }
+        carrusel.style.transform = `translateX(${posicion}px)`;
+    });
+
+    izquierda.addEventListener('click', () => {
+        posicion += paso;
+        if (posicion > 0) {
+            posicion = -(carrusel.scrollWidth - carrusel.offsetWidth);
+        }
+        carrusel.style.transform = `translateX(${posicion}px)`;
+    });
+
+    setInterval(() => {
+        posicion -= paso;
+        if (Math.abs(posicion) > (carrusel.scrollWidth - carrusel.offsetWidth)) {
+            posicion = 0;
+        }
+        carrusel.style.transform = `translateX(${posicion}px)`;
+    }, 3500);
+    </script>
 </body>
 </html>
